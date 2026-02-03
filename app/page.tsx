@@ -3,6 +3,7 @@
 import { auth } from "@/auth"
 import Link from "next/link"
 import { redirect } from "next/navigation"
+import AdBanner from "@/components/ad-banner"
 
 export default async function Home() {
   const session = await auth()
@@ -16,7 +17,7 @@ export default async function Home() {
 
       {/* ─── NAV ─── */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 no-underline">
             <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-md shadow-indigo-200">
@@ -42,7 +43,6 @@ export default async function Home() {
         </div>
       </nav>
 
-      {/* ─── HERO ─── */}
       <main className="max-w-6xl mx-auto px-6 pt-24 pb-28 relative">
 
         {/* Blobs decorativos de fundo */}
@@ -209,12 +209,20 @@ export default async function Home() {
         </div>
       </main>
 
+      {/* Bloco de anúncio central pós-hero */}
+      <div className="max-w-5xl mx-auto px-6 pb-20">
+        <AdBanner dataAdSlot="XXXXXXXXXX" />
+      </div>
+
       {/* ─── FOOTER ─── */}
       <footer className="border-t border-gray-100 py-10">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-sm text-gray-400">
-            © 2026 Taskmaster App. Desenvolvido para máxima performance.
-          </p>
+        <div className="max-w-6xl mx-auto px-6">
+          <AdBanner dataAdSlot="YYYYYYYYYY" />
+          <div className="text-center mt-8">
+            <p className="text-sm text-gray-400">
+              © 2026 Taskmaster App. Desenvolvido para máxima performance.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
