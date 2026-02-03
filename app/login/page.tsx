@@ -131,7 +131,7 @@ export default async function LoginPage({
                     Cadastre-se grátis
                   </Link>
                 </p>
-                <Link href="/forgot-password" size="sm" className="inline-block text-[11px] font-bold text-gray-400 hover:text-indigo-600 transition-colors uppercase tracking-wider underline decoration-1 underline-offset-4">
+                <Link href="/forgot-password" className="inline-block text-[11px] font-bold text-gray-400 hover:text-indigo-600 transition-colors uppercase tracking-wider underline decoration-1 underline-offset-4">
                   Esqueceu sua senha?
                 </Link>
               </div>
