@@ -1,0 +1,451 @@
+[2026-02-02T20:16:06.597Z] --- DEBUG: Starting getUserPlan for cml4sqbdi0009nkg295mafn1p ---
+[2026-02-02T20:16:06.609Z] 🔍 [getUserPlan] Data found: {"id":"cml5lvobn0007j2f1drx251cy","userId":"cml4sqbdi0009nkg295mafn1p","stripeCustomerId":"cus_TuI3Ux90c9qt2l","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:11:59.844Z","updatedAt":"2026-02-02T20:12:00.718Z"}
+[2026-02-02T20:16:06.610Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:16:06.649Z] --- DEBUG: Starting getUserPlan for cml4sqbdi0009nkg295mafn1p ---
+[2026-02-02T20:16:06.657Z] 🔍 [getUserPlan] Data found: {"id":"cml5lvobn0007j2f1drx251cy","userId":"cml4sqbdi0009nkg295mafn1p","stripeCustomerId":"cus_TuI3Ux90c9qt2l","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:11:59.844Z","updatedAt":"2026-02-02T20:12:00.718Z"}
+[2026-02-02T20:16:06.658Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:16:14.468Z] 📊 [getUserStats] Fetching stats for user: cml4sqbdi0009nkg295mafn1p (340juliano@gmail.com)
+[2026-02-02T20:16:14.469Z] --- DEBUG: Starting getUserPlan for cml4sqbdi0009nkg295mafn1p ---
+[2026-02-02T20:16:14.474Z] 🔍 [getUserPlan] Data found: {"id":"cml5lvobn0007j2f1drx251cy","userId":"cml4sqbdi0009nkg295mafn1p","stripeCustomerId":"cus_TuI3Ux90c9qt2l","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:11:59.844Z","updatedAt":"2026-02-02T20:12:00.718Z"}
+[2026-02-02T20:16:14.475Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:16:14.475Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:16:36.928Z] 📊 [getUserStats] Fetching stats for user: cml4sqbdi0009nkg295mafn1p (340juliano@gmail.com)
+[2026-02-02T20:16:36.929Z] --- DEBUG: Starting getUserPlan for cml4sqbdi0009nkg295mafn1p ---
+[2026-02-02T20:16:36.932Z] 🔍 [getUserPlan] Data found: {"id":"cml5lvobn0007j2f1drx251cy","userId":"cml4sqbdi0009nkg295mafn1p","stripeCustomerId":"cus_TuI3Ux90c9qt2l","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:11:59.844Z","updatedAt":"2026-02-02T20:12:00.718Z"}
+[2026-02-02T20:16:36.933Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:16:36.933Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:16:43.785Z] 📊 [getUserStats] Fetching stats for user: cml4sqbdi0009nkg295mafn1p (340juliano@gmail.com)
+[2026-02-02T20:16:43.786Z] --- DEBUG: Starting getUserPlan for cml4sqbdi0009nkg295mafn1p ---
+[2026-02-02T20:16:43.790Z] 🔍 [getUserPlan] Data found: {"id":"cml5lvobn0007j2f1drx251cy","userId":"cml4sqbdi0009nkg295mafn1p","stripeCustomerId":"cus_TuI3Ux90c9qt2l","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:11:59.844Z","updatedAt":"2026-02-02T20:12:00.718Z"}
+[2026-02-02T20:16:43.791Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:16:43.791Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:17:47.499Z] 📊 [getUserStats] Fetching stats for user: cml4sqbdi0009nkg295mafn1p (340juliano@gmail.com)
+[2026-02-02T20:17:47.500Z] --- DEBUG: Starting getUserPlan for cml4sqbdi0009nkg295mafn1p ---
+[2026-02-02T20:17:47.504Z] 🔍 [getUserPlan] Data found: {"id":"cml5lvobn0007j2f1drx251cy","userId":"cml4sqbdi0009nkg295mafn1p","stripeCustomerId":"cus_TuI3Ux90c9qt2l","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"premium","createdAt":"2026-02-02T20:11:59.844Z","updatedAt":"2026-02-02T20:17:08.082Z"}
+[2026-02-02T20:17:47.504Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T20:17:47.504Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T20:18:19.470Z] 📊 [getUserStats] Fetching stats for user: cml4sqbdi0009nkg295mafn1p (340juliano@gmail.com)
+[2026-02-02T20:18:19.470Z] --- DEBUG: Starting getUserPlan for cml4sqbdi0009nkg295mafn1p ---
+[2026-02-02T20:18:19.474Z] 🔍 [getUserPlan] Data found: {"id":"cml5lvobn0007j2f1drx251cy","userId":"cml4sqbdi0009nkg295mafn1p","stripeCustomerId":"cus_TuI3Ux90c9qt2l","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"premium","createdAt":"2026-02-02T20:11:59.844Z","updatedAt":"2026-02-02T20:17:08.082Z"}
+[2026-02-02T20:18:19.474Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T20:18:19.474Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T20:26:33.102Z] 📊 [getUserStats] Fetching stats for user: cml5mco8c0000i6s5o9gwnvot (juliano340@outlook.com)
+[2026-02-02T20:26:33.103Z] --- DEBUG: Starting getUserPlan for cml5mco8c0000i6s5o9gwnvot ---
+[2026-02-02T20:26:33.108Z] 🔍 [getUserPlan] Data found: {"id":"cml5mcofa0002i6s55ummtj83","userId":"cml5mco8c0000i6s5o9gwnvot","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:25:13.126Z","updatedAt":"2026-02-02T20:25:13.126Z"}
+[2026-02-02T20:26:33.108Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:26:33.109Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:27:37.712Z] 📊 [getUserStats] Fetching stats for user: cml5mco8c0000i6s5o9gwnvot (juliano340@outlook.com)
+[2026-02-02T20:27:37.713Z] --- DEBUG: Starting getUserPlan for cml5mco8c0000i6s5o9gwnvot ---
+[2026-02-02T20:27:37.716Z] 🔍 [getUserPlan] Data found: {"id":"cml5mcofa0002i6s55ummtj83","userId":"cml5mco8c0000i6s5o9gwnvot","stripeCustomerId":"cus_TuIIWgKvo95tE2","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:25:13.126Z","updatedAt":"2026-02-02T20:26:39.470Z"}
+[2026-02-02T20:27:37.717Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:27:37.717Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:27:40.990Z] 📊 [getUserStats] Fetching stats for user: cml5mco8c0000i6s5o9gwnvot (juliano340@outlook.com)
+[2026-02-02T20:27:40.991Z] --- DEBUG: Starting getUserPlan for cml5mco8c0000i6s5o9gwnvot ---
+[2026-02-02T20:27:40.993Z] 🔍 [getUserPlan] Data found: {"id":"cml5mcofa0002i6s55ummtj83","userId":"cml5mco8c0000i6s5o9gwnvot","stripeCustomerId":"cus_TuIIWgKvo95tE2","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:25:13.126Z","updatedAt":"2026-02-02T20:26:39.470Z"}
+[2026-02-02T20:27:40.993Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:27:40.993Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:31:43.205Z] 📊 [getUserStats] Fetching stats for user: cml5mco8c0000i6s5o9gwnvot (juliano340@outlook.com)
+[2026-02-02T20:31:43.205Z] --- DEBUG: Starting getUserPlan for cml5mco8c0000i6s5o9gwnvot ---
+[2026-02-02T20:31:43.208Z] 🔍 [getUserPlan] Data found: {"id":"cml5mcofa0002i6s55ummtj83","userId":"cml5mco8c0000i6s5o9gwnvot","stripeCustomerId":"cus_TuIIWgKvo95tE2","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"premium","createdAt":"2026-02-02T20:25:13.126Z","updatedAt":"2026-02-02T20:30:57.363Z"}
+[2026-02-02T20:31:43.209Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T20:31:43.209Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T20:33:12.788Z] 📊 [getUserStats] Fetching stats for user: cml5mli4k0003i6s5lsxkuvm7 (ana@email.com)
+[2026-02-02T20:33:12.788Z] --- DEBUG: Starting getUserPlan for cml5mli4k0003i6s5lsxkuvm7 ---
+[2026-02-02T20:33:12.791Z] 🔍 [getUserPlan] Data found: {"id":"cml5mli980005i6s5eikh2s7o","userId":"cml5mli4k0003i6s5lsxkuvm7","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:32:05.036Z","updatedAt":"2026-02-02T20:32:05.036Z"}
+[2026-02-02T20:33:12.791Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:33:12.792Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:33:16.522Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:16.531Z] ✅ [Stripe Webhook] Evento verificado: customer.created
+[2026-02-02T20:33:16.531Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.created
+[2026-02-02T20:33:46.145Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.147Z] ✅ [Stripe Webhook] Evento verificado: charge.succeeded
+[2026-02-02T20:33:46.148Z] ℹ️ [Stripe Webhook] Evento não tratado: charge.succeeded
+[2026-02-02T20:33:46.190Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.196Z] ✅ [Stripe Webhook] Evento verificado: payment_method.attached
+[2026-02-02T20:33:46.196Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_method.attached
+[2026-02-02T20:33:46.305Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.306Z] ✅ [Stripe Webhook] Evento verificado: customer.updated
+[2026-02-02T20:33:46.306Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.updated
+[2026-02-02T20:33:46.325Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.327Z] ✅ [Stripe Webhook] Evento verificado: checkout.session.completed
+[2026-02-02T20:33:46.328Z] ⏳ [Stripe Webhook] Processando checkout.session.completed para user cml5mli4k0003i6s5lsxkuvm7, sub sub_1SwToZJ5lr7QLCJsyWxGc3U3
+[2026-02-02T20:33:46.544Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.547Z] ✅ [Stripe Webhook] Evento verificado: customer.subscription.created
+[2026-02-02T20:33:46.548Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.subscription.created
+[2026-02-02T20:33:46.646Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.648Z] ✅ [Stripe Webhook] Evento verificado: payment_intent.succeeded
+[2026-02-02T20:33:46.649Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_intent.succeeded
+[2026-02-02T20:33:46.717Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.721Z] ✅ [Stripe Webhook] Evento verificado: payment_intent.created
+[2026-02-02T20:33:46.722Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_intent.created
+[2026-02-02T20:33:46.875Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:46.878Z] ✅ [Stripe Webhook] Evento verificado: invoice.created
+[2026-02-02T20:33:46.878Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.created
+[2026-02-02T20:33:47.001Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:47.004Z] ✅ [Stripe Webhook] Evento verificado: invoice.finalized
+[2026-02-02T20:33:47.005Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.finalized
+[2026-02-02T20:33:47.019Z] ❌ [Stripe Webhook] Erro ao buscar sub ou atualizar banco: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].subscription.update()` invocation in
+D:\sandbox\atendimento\.next\dev\server\chunks\[root-of-the-server]__03b86cfa._.js:200:166
+
+  197 (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$logger$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["logToFile"])(`⏳ [Stripe Webhook] Processando checkout.session.completed para user ${userId}, sub ${subscriptionId}`);
+  198 try {
+  199     const subscription = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$stripe$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["stripe"].subscriptions.retrieve(subscriptionId);
+→ 200     await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].subscription.update({
+            where: {
+              userId: "cml5mli4k0003i6s5lsxkuvm7"
+            },
+            data: {
+              stripeSubscriptionId: "sub_1SwToZJ5lr7QLCJsyWxGc3U3",
+              stripePriceId: "price_1SwSzOJ5lr7QLCJsDz8S8cXu",
+              stripeCurrentPeriodEnd: new Date("Invalid Date"),
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~
+              plan: "premium"
+            }
+          })
+
+Invalid value for argument `stripeCurrentPeriodEnd`: Provided Date object is invalid. Expected Date.
+[2026-02-02T20:33:47.020Z] ❌ [Stripe Webhook] Erro ao processar evento: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].subscription.update()` invocation in
+D:\sandbox\atendimento\.next\dev\server\chunks\[root-of-the-server]__03b86cfa._.js:200:166
+
+  197 (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$logger$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["logToFile"])(`⏳ [Stripe Webhook] Processando checkout.session.completed para user ${userId}, sub ${subscriptionId}`);
+  198 try {
+  199     const subscription = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$stripe$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["stripe"].subscriptions.retrieve(subscriptionId);
+→ 200     await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].subscription.update({
+            where: {
+              userId: "cml5mli4k0003i6s5lsxkuvm7"
+            },
+            data: {
+              stripeSubscriptionId: "sub_1SwToZJ5lr7QLCJsyWxGc3U3",
+              stripePriceId: "price_1SwSzOJ5lr7QLCJsDz8S8cXu",
+              stripeCurrentPeriodEnd: new Date("Invalid Date"),
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~
+              plan: "premium"
+            }
+          })
+
+Invalid value for argument `stripeCurrentPeriodEnd`: Provided Date object is invalid. Expected Date.
+[2026-02-02T20:33:47.074Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:47.090Z] ✅ [Stripe Webhook] Evento verificado: invoice.paid
+[2026-02-02T20:33:47.091Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.paid
+[2026-02-02T20:33:47.178Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:33:47.180Z] ✅ [Stripe Webhook] Evento verificado: invoice.payment_succeeded
+[2026-02-02T20:33:47.180Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.payment_succeeded
+[2026-02-02T20:33:57.752Z] 📊 [getUserStats] Fetching stats for user: cml5mli4k0003i6s5lsxkuvm7 (ana@email.com)
+[2026-02-02T20:33:57.753Z] --- DEBUG: Starting getUserPlan for cml5mli4k0003i6s5lsxkuvm7 ---
+[2026-02-02T20:33:57.756Z] 🔍 [getUserPlan] Data found: {"id":"cml5mli980005i6s5eikh2s7o","userId":"cml5mli4k0003i6s5lsxkuvm7","stripeCustomerId":"cus_TuIObGt6RrUGpd","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:32:05.036Z","updatedAt":"2026-02-02T20:33:16.094Z"}
+[2026-02-02T20:33:57.756Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:33:57.757Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:34:31.099Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:34:31.101Z] ✅ [Stripe Webhook] Evento verificado: invoice_payment.paid
+[2026-02-02T20:34:31.101Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice_payment.paid
+[2026-02-02T20:37:44.168Z] 📊 [getUserStats] Fetching stats for user: cml5mli4k0003i6s5lsxkuvm7 (ana@email.com)
+[2026-02-02T20:37:44.168Z] --- DEBUG: Starting getUserPlan for cml5mli4k0003i6s5lsxkuvm7 ---
+[2026-02-02T20:37:44.171Z] 🔍 [getUserPlan] Data found: {"id":"cml5mli980005i6s5eikh2s7o","userId":"cml5mli4k0003i6s5lsxkuvm7","stripeCustomerId":"cus_TuIObGt6RrUGpd","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"premium","createdAt":"2026-02-02T20:32:05.036Z","updatedAt":"2026-02-02T20:36:03.412Z"}
+[2026-02-02T20:37:44.171Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T20:37:44.172Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T20:38:28.754Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:38:28.754Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:38:28.757Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:08.201Z"}
+[2026-02-02T20:38:28.757Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:38:28.758Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:38:35.332Z] 🎬 [createTask] Start for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:38:35.333Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:38:35.335Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:08.201Z"}
+[2026-02-02T20:38:35.335Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:38:35.513Z] ✅ [createTask] Succeed for user: cml5mtacf0006i6s5lp9rgtse
+[2026-02-02T20:38:35.571Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:38:35.571Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:38:35.574Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:08.201Z"}
+[2026-02-02T20:38:35.574Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:38:35.575Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:38:35.741Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:38:35.741Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:38:35.744Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:08.201Z"}
+[2026-02-02T20:38:35.744Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:38:35.744Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:38:39.977Z] 🎬 [createTask] Start for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:38:39.978Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:38:39.980Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:08.201Z"}
+[2026-02-02T20:38:39.980Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:38:40.107Z] ✅ [createTask] Succeed for user: cml5mtacf0006i6s5lp9rgtse
+[2026-02-02T20:38:40.188Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:38:40.189Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:38:40.195Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:08.201Z"}
+[2026-02-02T20:38:40.196Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:38:40.197Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:38:40.409Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:38:40.409Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:38:40.413Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:08.201Z"}
+[2026-02-02T20:38:40.414Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:38:40.414Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:38:43.639Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:38:43.643Z] ✅ [Stripe Webhook] Evento verificado: customer.created
+[2026-02-02T20:38:43.643Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.created
+[2026-02-02T20:39:07.925Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:07.927Z] ✅ [Stripe Webhook] Evento verificado: charge.succeeded
+[2026-02-02T20:39:07.927Z] ℹ️ [Stripe Webhook] Evento não tratado: charge.succeeded
+[2026-02-02T20:39:08.032Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.033Z] ✅ [Stripe Webhook] Evento verificado: payment_method.attached
+[2026-02-02T20:39:08.034Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_method.attached
+[2026-02-02T20:39:08.115Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.119Z] ✅ [Stripe Webhook] Evento verificado: customer.updated
+[2026-02-02T20:39:08.120Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.updated
+[2026-02-02T20:39:08.297Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.307Z] ✅ [Stripe Webhook] Evento verificado: customer.subscription.created
+[2026-02-02T20:39:08.308Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.subscription.created
+[2026-02-02T20:39:08.362Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.369Z] ✅ [Stripe Webhook] Evento verificado: payment_intent.succeeded
+[2026-02-02T20:39:08.370Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_intent.succeeded
+[2026-02-02T20:39:08.421Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.423Z] ✅ [Stripe Webhook] Evento verificado: checkout.session.completed
+[2026-02-02T20:39:08.424Z] ⏳ [Stripe Webhook] Processando checkout.session.completed para user cml5mtacf0006i6s5lp9rgtse, sub sub_1SwTtlJ5lr7QLCJsAQRtHMwr
+[2026-02-02T20:39:08.444Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.447Z] ✅ [Stripe Webhook] Evento verificado: payment_intent.created
+[2026-02-02T20:39:08.448Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_intent.created
+[2026-02-02T20:39:08.575Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.578Z] ✅ [Stripe Webhook] Evento verificado: invoice.created
+[2026-02-02T20:39:08.579Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.created
+[2026-02-02T20:39:08.716Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:08.719Z] ✅ [Stripe Webhook] Evento verificado: invoice.finalized
+[2026-02-02T20:39:08.719Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.finalized
+[2026-02-02T20:39:08.838Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:09.736Z] ✅ [Stripe Webhook] Evento verificado: invoice.paid
+[2026-02-02T20:39:09.736Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.paid
+[2026-02-02T20:39:09.747Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:09.750Z] ✅ [Stripe Webhook] Evento verificado: invoice.payment_succeeded
+[2026-02-02T20:39:09.750Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.payment_succeeded
+[2026-02-02T20:39:09.988Z] 📅 [Stripe Webhook] Raw current_period_end: undefined
+[2026-02-02T20:39:09.988Z] ❌ [Stripe Webhook] Erro ao buscar sub ou atualizar banco: current_period_end ausente na subscription do Stripe
+[2026-02-02T20:39:09.989Z] ❌ [Stripe Webhook] Erro ao processar evento: current_period_end ausente na subscription do Stripe
+[2026-02-02T20:39:18.796Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:39:18.797Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:39:18.800Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":"cus_TuIUfEsuRwHbA3","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:43.122Z"}
+[2026-02-02T20:39:18.800Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:39:18.801Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:39:29.959Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T20:39:29.959Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T20:39:29.963Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":"cus_TuIUfEsuRwHbA3","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:38:43.122Z"}
+[2026-02-02T20:39:29.963Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T20:39:29.963Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T20:39:47.001Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T20:39:47.003Z] ✅ [Stripe Webhook] Evento verificado: invoice_payment.paid
+[2026-02-02T20:39:47.004Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice_payment.paid
+[2026-02-02T21:12:39.394Z] 📊 [getUserStats] Fetching stats for user: cml5mtacf0006i6s5lp9rgtse (ivo@mail.com)
+[2026-02-02T21:12:39.395Z] --- DEBUG: Starting getUserPlan for cml5mtacf0006i6s5lp9rgtse ---
+[2026-02-02T21:12:39.412Z] 🔍 [getUserPlan] Data found: {"id":"cml5mtah40008i6s5kkg291zh","userId":"cml5mtacf0006i6s5lp9rgtse","stripeCustomerId":"cus_TuIUfEsuRwHbA3","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"premium","createdAt":"2026-02-02T20:38:08.201Z","updatedAt":"2026-02-02T20:40:28.086Z"}
+[2026-02-02T21:12:39.412Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:12:39.413Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:13:39.330Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:13:39.330Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:13:39.333Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":null,"stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"free","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:13:20.542Z"}
+[2026-02-02T21:13:39.333Z] ✅ [getUserPlan] Returning plan: free
+[2026-02-02T21:13:39.333Z] 📊 [getUserStats] Plan detected: free
+[2026-02-02T21:13:43.721Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:13:43.726Z] ✅ [Stripe Webhook] Evento verificado: customer.created
+[2026-02-02T21:13:43.726Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.created
+[2026-02-02T21:14:19.175Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.183Z] ✅ [Stripe Webhook] Evento verificado: charge.succeeded
+[2026-02-02T21:14:19.183Z] ℹ️ [Stripe Webhook] Evento não tratado: charge.succeeded
+[2026-02-02T21:14:19.250Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.252Z] ✅ [Stripe Webhook] Evento verificado: payment_method.attached
+[2026-02-02T21:14:19.252Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_method.attached
+[2026-02-02T21:14:19.339Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.355Z] ✅ [Stripe Webhook] Evento verificado: customer.updated
+[2026-02-02T21:14:19.355Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.updated
+[2026-02-02T21:14:19.520Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.529Z] ✅ [Stripe Webhook] Evento verificado: customer.subscription.created
+[2026-02-02T21:14:19.530Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.subscription.created
+[2026-02-02T21:14:19.616Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.624Z] ✅ [Stripe Webhook] Evento verificado: payment_intent.succeeded
+[2026-02-02T21:14:19.625Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_intent.succeeded
+[2026-02-02T21:14:19.658Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.670Z] ✅ [Stripe Webhook] Evento verificado: payment_intent.created
+[2026-02-02T21:14:19.671Z] ℹ️ [Stripe Webhook] Evento não tratado: payment_intent.created
+[2026-02-02T21:14:19.718Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.720Z] ✅ [Stripe Webhook] Evento verificado: checkout.session.completed
+[2026-02-02T21:14:19.720Z] ⏳ [Stripe Webhook] Processando checkout.session.completed para user cml5o2kar00007knodvbt4mkj, sub sub_1SwURpJ5lr7QLCJsBrCWuXAq
+[2026-02-02T21:14:19.852Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:19.858Z] ✅ [Stripe Webhook] Evento verificado: invoice.created
+[2026-02-02T21:14:19.858Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.created
+[2026-02-02T21:14:20.406Z] 📦 [Stripe Webhook] Full Subscription Object: {"id":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","object":"subscription","application":null,"application_fee_percent":null,"automatic_tax":{"disabled_reason":null,"enabled":false,"liability":null},"billing_cycle_anchor":1770066855,"billing_cycle_anchor_config":null,"billing_mode":{"flexible":{"proration_discounts":"included"},"type":"flexible","updated_at":1770066823},"billing_thresholds":null,"cancel_at":null,"cancel_at_period_end":false,"canceled_at":null,"cancellation_details":{"comment":null,"feedback":null,"reason":null},"collection_method":"charge_automatically","created":1770066855,"currency":"brl","customer":"cus_TuJ37Io33aN05C","customer_account":null,"days_until_due":null,"default_payment_method":"pm_1SwURmJ5lr7QLCJsrToEtpVN","default_source":null,"default_tax_rates":[],"description":null,"discounts":[],"ended_at":null,"invoice_settings":{"account_tax_ids":null,"issuer":{"type":"self"}},"items":{"object":"list","data":[{"id":"si_TuJ3b4WH5ph94h","object":"subscription_item","billing_thresholds":null,"created":1770066855,"current_period_end":1772486055,"current_period_start":1770066855,"discounts":[],"metadata":{},"plan":{"id":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","object":"plan","active":true,"amount":990,"amount_decimal":"990","billing_scheme":"per_unit","created":1770061250,"currency":"brl","interval":"month","interval_count":1,"livemode":false,"metadata":{},"meter":null,"nickname":null,"product":"prod_TuHYQHfeRrUAkU","tiers_mode":null,"transform_usage":null,"trial_period_days":null,"usage_type":"licensed"},"price":{"id":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","object":"price","active":true,"billing_scheme":"per_unit","created":1770061250,"currency":"brl","custom_unit_amount":null,"livemode":false,"lookup_key":null,"metadata":{},"nickname":null,"product":"prod_TuHYQHfeRrUAkU","recurring":{"interval":"month","interval_count":1,"meter":null,"trial_period_days":null,"usage_type":"licensed"},"tax_behavior":"unspecified","tiers_mode":null,"transform_quantity":null,"type":"recurring","unit_amount":990,"unit_amount_decimal":"990"},"quantity":1,"subscription":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","tax_rates":[]}],"has_more":false,"total_count":1,"url":"/v1/subscription_items?subscription=sub_1SwURpJ5lr7QLCJsBrCWuXAq"},"latest_invoice":"in_1SwURnJ5lr7QLCJsdOpCU4o3","livemode":false,"metadata":{},"next_pending_invoice_item_invoice":null,"on_behalf_of":null,"pause_collection":null,"payment_settings":{"payment_method_options":{"acss_debit":null,"bancontact":null,"card":{"network":null,"request_three_d_secure":"automatic"},"customer_balance":null,"konbini":null,"payto":null,"sepa_debit":null,"us_bank_account":null},"payment_method_types":["card"],"save_default_payment_method":"off"},"pending_invoice_item_interval":null,"pending_setup_intent":null,"pending_update":null,"plan":{"id":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","object":"plan","active":true,"amount":990,"amount_decimal":"990","billing_scheme":"per_unit","created":1770061250,"currency":"brl","interval":"month","interval_count":1,"livemode":false,"metadata":{},"meter":null,"nickname":null,"product":"prod_TuHYQHfeRrUAkU","tiers_mode":null,"transform_usage":null,"trial_period_days":null,"usage_type":"licensed"},"quantity":1,"schedule":null,"start_date":1770066855,"status":"active","test_clock":null,"transfer_data":null,"trial_end":null,"trial_settings":{"end_behavior":{"missing_payment_method":"create_invoice"}},"trial_start":null}
+[2026-02-02T21:14:20.407Z] 📅 [Stripe Webhook] Raw current_period_end: undefined
+[2026-02-02T21:14:20.584Z] 🚀 [Stripe Webhook] Usuário cml5o2kar00007knodvbt4mkj agora é Premium!
+[2026-02-02T21:14:23.698Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:23.701Z] ✅ [Stripe Webhook] Evento verificado: invoice.finalized
+[2026-02-02T21:14:23.701Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.finalized
+[2026-02-02T21:14:27.570Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:27.582Z] ✅ [Stripe Webhook] Evento verificado: invoice.paid
+[2026-02-02T21:14:27.583Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.paid
+[2026-02-02T21:14:27.707Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:27.712Z] ✅ [Stripe Webhook] Evento verificado: invoice.payment_succeeded
+[2026-02-02T21:14:27.712Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice.payment_succeeded
+[2026-02-02T21:14:30.559Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:14:30.559Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:14:30.562Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:14:30.562Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:14:30.562Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:14:42.862Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-02T21:14:42.865Z] ✅ [Stripe Webhook] Evento verificado: invoice_payment.paid
+[2026-02-02T21:14:42.865Z] ℹ️ [Stripe Webhook] Evento não tratado: invoice_payment.paid
+[2026-02-02T21:30:56.098Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.099Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:56.112Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:56.112Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:56.113Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:56.195Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.196Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:56.214Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:56.216Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:56.217Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:56.301Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.302Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:56.314Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:56.315Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:56.315Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:56.466Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.467Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:56.482Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:56.482Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:56.483Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:56.544Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.545Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:56.612Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:56.613Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:56.613Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:56.682Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.683Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:56.687Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:56.688Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:56.688Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:56.765Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.766Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:56.776Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:56.777Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:56.777Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:56.986Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:56.987Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:57.002Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:57.002Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:57.003Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:57.491Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:57.491Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:57.508Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:57.508Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:57.509Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:57.570Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:57.572Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:57.598Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:57.599Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:57.600Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:57.627Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:57.628Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:57.700Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:57.700Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:57.701Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:57.814Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:57.871Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:57.881Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:57.881Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:57.881Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:57.911Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:57.912Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:57.917Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:57.917Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:57.917Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:58.280Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:58.280Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:58.295Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:58.296Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:58.296Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:58.344Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:58.345Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:58.355Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:58.355Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:58.356Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:58.398Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:58.399Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:58.409Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:58.409Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:58.410Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:58.461Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:58.462Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:58.473Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:58.474Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:58.474Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:58.501Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:58.501Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:58.510Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:58.511Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:58.511Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:58.538Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:58.544Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:58.549Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:58.549Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:58.550Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:59.020Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:59.021Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:59.033Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:59.034Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:59.035Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:59.110Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:59.111Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:59.139Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:59.140Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:59.140Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:59.174Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:59.174Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:59.215Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:59.218Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:59.219Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:59.266Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:59.267Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:59.288Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:59.289Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:59.290Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:59.354Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:59.355Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:59.530Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:59.531Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:59.536Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:59.597Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:59.598Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:59.613Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:59.614Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:59.615Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:30:59.713Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:30:59.716Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:30:59.723Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:30:59.723Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:30:59.724Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:31:00.020Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:31:00.020Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:31:00.028Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:31:00.029Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:31:00.030Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:31:00.073Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:31:00.074Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:31:00.081Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:31:00.084Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:31:00.084Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:31:19.191Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:31:19.191Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:31:19.197Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:31:19.198Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:31:19.198Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:31:35.093Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:31:35.094Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:31:35.103Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:31:35.103Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:31:35.104Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:32:59.200Z] 📊 [getUserStats] Fetching stats for user: cml5o2kar00007knodvbt4mkj (jana@mail.com)
+[2026-02-02T21:32:59.201Z] --- DEBUG: Starting getUserPlan for cml5o2kar00007knodvbt4mkj ---
+[2026-02-02T21:32:59.205Z] 🔍 [getUserPlan] Data found: {"id":"cml5o2kd900027knojpl75u1p","userId":"cml5o2kar00007knodvbt4mkj","stripeCustomerId":"cus_TuJ37Io33aN05C","stripeSubscriptionId":"sub_1SwURpJ5lr7QLCJsBrCWuXAq","stripePriceId":"price_1SwSzOJ5lr7QLCJsDz8S8cXu","stripeCurrentPeriodEnd":"2026-03-04T21:14:20.407Z","plan":"premium","createdAt":"2026-02-02T21:13:20.542Z","updatedAt":"2026-02-02T21:14:20.410Z"}
+[2026-02-02T21:32:59.206Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:32:59.206Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-02T21:34:15.449Z] 📊 [getUserStats] Fetching stats for user: cml4r9ie50000nkg2xxnoqoj7 (juliano340@gmail.com)
+[2026-02-02T21:34:15.449Z] --- DEBUG: Starting getUserPlan for cml4r9ie50000nkg2xxnoqoj7 ---
+[2026-02-02T21:34:15.455Z] 🔍 [getUserPlan] Data found: {"id":"cml4wavoy000114dtgpwez4kx","userId":"cml4r9ie50000nkg2xxnoqoj7","stripeCustomerId":"cus_TuHjilCGNEnOiH","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"premium","createdAt":"2026-02-02T08:15:59.219Z","updatedAt":"2026-02-02T20:09:45.286Z"}
+[2026-02-02T21:34:15.456Z] ✅ [getUserPlan] Returning plan: premium
+[2026-02-02T21:34:15.457Z] 📊 [getUserStats] Plan detected: premium
