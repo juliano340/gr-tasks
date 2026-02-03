@@ -449,3 +449,6 @@ Invalid value for argument `stripeCurrentPeriodEnd`: Provided Date object is inv
 [2026-02-02T21:34:15.455Z] 🔍 [getUserPlan] Data found: {"id":"cml4wavoy000114dtgpwez4kx","userId":"cml4r9ie50000nkg2xxnoqoj7","stripeCustomerId":"cus_TuHjilCGNEnOiH","stripeSubscriptionId":null,"stripePriceId":null,"stripeCurrentPeriodEnd":null,"plan":"premium","createdAt":"2026-02-02T08:15:59.219Z","updatedAt":"2026-02-02T20:09:45.286Z"}
 [2026-02-02T21:34:15.456Z] ✅ [getUserPlan] Returning plan: premium
 [2026-02-02T21:34:15.457Z] 📊 [getUserStats] Plan detected: premium
+[2026-02-03T00:53:15.682Z] 🔔 [Stripe Webhook] Recebido!
+[2026-02-03T00:53:15.703Z] ✅ [Stripe Webhook] Evento verificado: customer.created
+[2026-02-03T00:53:15.704Z] ℹ️ [Stripe Webhook] Evento não tratado: customer.created

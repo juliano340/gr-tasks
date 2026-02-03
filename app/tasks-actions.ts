@@ -79,10 +79,6 @@ export async function updateTask(formData: FormData) {
   }
 
   const id = formData.get("id") as string
-  const title = formData.get("title") as string
-  const description = formData.get("description") as string
-  const completed = formData.get("completed") === "true"
-
   const task = await (prisma as any).task.findUnique({
     where: { id },
   })
@@ -91,16 +87,31 @@ export async function updateTask(formData: FormData) {
     return { error: "Task não encontrada" }
   }
 
+  // Verifica plano para edição (não apenas toggle complete)
+  const plan = await getUserPlan(session.user.id)
+  const isPremium = plan === "premium"
+
+  if (!isPremium) {
+    return { error: "Edição de tarefas é um recurso Premium. Faça upgrade para editar!" }
+  }
+
+  const title = formData.get("title") as string
+  const description = formData.get("description") as string
   const priority = formData.get("priority") as string
   const dueDate = formData.get("dueDate") as string
+  const completed = formData.get("completed") === "true"
+
+  if (!title || title.trim().length === 0) {
+    return { error: "Título é obrigatório" }
+  }
 
   await (prisma as any).task.update({
     where: { id },
     data: {
-      title: title?.trim() || task.title,
-      description: description?.trim() || task.description,
+      title: title.trim(),
+      description: description?.trim() || null,
       priority: priority || task.priority,
-      dueDate: dueDate ? new Date(dueDate) : task.dueDate,
+      dueDate: dueDate ? new Date(dueDate) : null,
       completed,
       completedAt: completed && !task.completed ? new Date() : (completed ? task.completedAt : null),
     },

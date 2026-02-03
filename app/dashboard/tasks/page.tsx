@@ -1,7 +1,7 @@
 import { auth } from "@/auth"
 import { redirect } from "next/navigation"
 import { getUserStats } from "@/app/tasks-actions"
-import TaskList from "@/components/task-list"
+import TaskDashboardCard from "@/components/task-dashboard-card"
 import CreateTaskButton from "@/components/create-task-button"
 import Link from "next/link"
 
@@ -19,10 +19,10 @@ export default async function TasksPage() {
 
   const progressPercent = Math.min((taskCount / limit) * 100, 100)
   const isAtLimit = taskCount >= limit
-  const completedCount = tasks.filter(task => task.completed).length
+  const completedCount = tasks.filter((task: any) => task.completed).length
   const pendingCount = taskCount - completedCount
   const today = new Date()
-  const todayCount = tasks.filter(task => {
+  const todayCount = tasks.filter((task: any) => {
     const createdAt = new Date(task.createdAt)
     return createdAt.toDateString() === today.toDateString()
   }).length
@@ -71,7 +71,7 @@ export default async function TasksPage() {
       {/* ─── CORPO ─── */}
       <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col gap-6">
 
-        {/* ─── Header: saudação + stats ── */}
+        {/* ── Header: saudação + stats ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
 
           {/* Saudação */}
@@ -91,24 +91,35 @@ export default async function TasksPage() {
           </div>
         </div>
 
-        {/* ─── Stats Row: 3 cards horizontais ── */}
+        {/* ── Stats Row: 3 cards horizontais ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-          {/* Card 1: Plano */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm shadow-black/4 p-5 flex items-center gap-4">
-            <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${
-              plan === "premium"
-                ? "bg-gradient-to-br from-indigo-500 to-violet-600 shadow-md shadow-indigo-200"
-                : "bg-gray-100"
-            }`}>
-              <span className="text-lg">{plan === "premium" ? "💎" : "🚀"}</span>
+          {/* Card 1: Plano e Upgrade */}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm shadow-black/4 p-5 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                plan === "premium"
+                  ? "bg-gradient-to-br from-indigo-500 to-violet-600 shadow-md shadow-indigo-200"
+                  : "bg-gray-100"
+              }`}>
+                <span className="text-lg">{plan === "premium" ? "💎" : "🚀"}</span>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Plano atual</p>
+                <p className={`text-sm font-bold mt-0.5 ${plan === "premium" ? "text-indigo-600" : "text-gray-700"}`}>
+                  {plan === "premium" ? "Premium" : "Free"}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Plano atual</p>
-              <p className={`text-sm font-bold mt-0.5 ${plan === "premium" ? "text-indigo-600" : "text-gray-700"}`}>
-                {plan === "premium" ? "Premium" : "Free"}
-              </p>
-            </div>
+            
+            {plan === "free" && (
+              <Link 
+                href="/dashboard/upgrade"
+                className="px-3 py-1.5 bg-indigo-50 text-indigo-600 text-[10px] font-black rounded-lg hover:bg-indigo-600 hover:text-white transition-all uppercase tracking-tighter"
+              >
+                Upgrade ⚡
+              </Link>
+            )}
           </div>
 
           {/* Card 2: Capacidade com progress */}
@@ -145,67 +156,52 @@ export default async function TasksPage() {
             <div className="flex items-center justify-between mb-4">
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Resumo rápido</p>
               <span className="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
-                Hoje
+                Geral
               </span>
             </div>
             <div className="grid grid-cols-3 gap-3">
               <div className="text-center">
                 <p className="text-lg font-extrabold text-gray-900">{pendingCount}</p>
-                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Pendentes</p>
+                <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">Pendente</p>
               </div>
               <div className="text-center">
                 <p className="text-lg font-extrabold text-gray-900">{completedCount}</p>
-                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Concluídas</p>
+                <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">Concluído</p>
               </div>
               <div className="text-center">
                 <p className="text-lg font-extrabold text-gray-900">{todayCount}</p>
-                <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Hoje</p>
+                <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">Hoje</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ─── Lista de tarefas Estilo Mockup ── */}
-        <div className="bg-gradient-to-br from-indigo-600 to-violet-600 rounded-[32px] shadow-2xl shadow-indigo-200 overflow-hidden p-8">
-
-          {/* Header Mockup */}
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h2 className="text-white text-2xl font-black">Meus Tasks</h2>
-              <p className="text-indigo-200 text-sm font-medium mt-1 uppercase tracking-tight">
-                {new Date().toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "short" })}
-              </p>
+        {/* ── Banner de Limite atingido (Só para Free com limite) ── */}
+        {plan === "free" && isAtLimit && (
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 animate-in fade-in slide-in-from-top-4 duration-500">
+            <div className="flex items-center gap-4 text-center sm:text-left">
+              <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-xl">⚠️</div>
+              <div>
+                <h3 className="text-amber-900 font-bold text-lg leading-tight">Limite atingido!</h3>
+                <p className="text-amber-700 text-sm mt-1">Você atingiu o limite de {limit} tarefas do plano gratuito.</p>
+              </div>
             </div>
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center border border-white/10 hover:bg-white/30 transition-all cursor-pointer">
-              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-              </svg>
-            </div>
+            <Link 
+              href="/dashboard/upgrade"
+              className="px-8 py-3 bg-amber-600 text-white font-black rounded-xl hover:bg-amber-700 transition-all shadow-lg shadow-amber-200 active:scale-95"
+            >
+              LIBERAR ACESSO ILIMITADO 🚀
+            </Link>
           </div>
+        )}
 
-          {/* Progress Bar Fina (Mockup) */}
-          <div className="w-full bg-white/20 h-1.5 rounded-full mb-8">
-            <div
-              className="bg-emerald-400 h-full rounded-full transition-all duration-1000 ease-out shadow-sm shadow-emerald-400/50"
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
-
-          {/* Lista de Tasks em Cards Transparentes */}
-          <div className="space-y-4">
-            <TaskList tasks={tasks} />
-          </div>
-
-          {/* + Nova Tarefa Placeholder (Visual) */}
-          <div
-            className="w-full mt-6 py-4 border-2 border-dashed border-white/25 rounded-3xl flex items-center justify-center gap-2 hover:border-white/40 hover:bg-white/5 transition-all text-white/50 font-bold cursor-not-allowed opacity-60"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-            </svg>
-            Nova Tarefa
-          </div>
-        </div>
+        {/* ── Lista de tarefas Estilo Mockup (CLIENT COMPONENT) ── */}
+        <TaskDashboardCard 
+          tasks={tasks} 
+          progressPercent={progressPercent} 
+          isAtLimit={isAtLimit} 
+          plan={plan}
+        />
       </div>
     </div>
   )
