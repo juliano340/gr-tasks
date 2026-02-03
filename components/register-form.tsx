@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 
 type RegisterFormProps = {
-  action: (formData: FormData) => void | Promise<void>
+  action: (formData: FormData) => unknown | Promise<unknown>
 }
 
 export default function RegisterForm({ action }: RegisterFormProps) {
@@ -33,7 +33,9 @@ export default function RegisterForm({ action }: RegisterFormProps) {
   return (
     <form
       className="space-y-5"
-      action={action}
+      action={async (formData) => {
+        await action(formData)
+      }}
       onSubmit={(event) => {
         if (password !== confirmPassword) {
           event.preventDefault()
