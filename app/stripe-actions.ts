@@ -11,7 +11,7 @@ export async function createCheckoutSession() {
   const session = await auth()
   
   if (!session?.user?.id) {
-    return { error: "Não autenticado" }
+    redirect("/login")
   }
 
   // Busca ou cria subscription record
@@ -30,7 +30,7 @@ export async function createCheckoutSession() {
 
   // Se já é premium, redireciona para portal
   if (subscription.plan === "premium") {
-    return { error: "Você já é Premium!" }
+    redirect("/dashboard/settings")
   }
 
   const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000"
@@ -78,7 +78,7 @@ export async function createPortalSession() {
   const session = await auth()
   
   if (!session?.user?.id) {
-    return { error: "Não autenticado" }
+    redirect("/login")
   }
 
   const subscription = await prisma.subscription.findUnique({
@@ -86,7 +86,7 @@ export async function createPortalSession() {
   })
 
   if (!subscription?.stripeCustomerId) {
-    return { error: "Nenhuma assinatura encontrada" }
+    redirect("/dashboard/upgrade")
   }
 
   const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000"

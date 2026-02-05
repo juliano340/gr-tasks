@@ -144,7 +144,7 @@ export default async function SettingsPage() {
                       </p>
                     </div>
                   </div>
-                  <form action={createPortalSession}>
+                  <form action={async () => { "use server"; await createPortalSession() }}>
                     <button className="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-bold rounded-xl shadow-md shadow-indigo-200 hover:shadow-lg hover:shadow-indigo-200 hover:-translate-y-0.5 transition-all duration-200">
                       Gerenciar no Stripe
                     </button>
