@@ -66,6 +66,12 @@ export default async function Dashboard() {
                   📋 Tasks
                 </Link>
                 <Link 
+                  href="/dashboard/settings" 
+                  className="w-full flex justify-center items-center py-2 px-4 border border-violet-300 bg-violet-50 rounded-lg shadow-sm text-sm font-medium text-violet-700 hover:bg-violet-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 transition-colors"
+                >
+                  ⚙️ Configs
+                </Link>
+                <Link 
                   href="/" 
                   className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
                 >

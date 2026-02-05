@@ -4,16 +4,24 @@ import { auth } from "@/auth"
 import Link from "next/link"
 import { redirect } from "next/navigation"
 import AdBanner from "@/components/ad-banner"
+import RegisterSuccessToast from "@/components/register-success-toast"
+import AccountDeletedModal from "@/components/account-deleted-modal"
+import { cookies } from "next/headers"
 
-export default async function Home() {
+export default async function Home(props: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const searchParams = await props.searchParams
+  const cookieStore = await cookies()
+  const isDeleted = searchParams["account-deleted"] === "true" || cookieStore.get("account-deleted")?.value === "true"
   const session = await auth()
 
-  if (session) {
+  if (session && !isDeleted) {
     redirect("/dashboard/tasks")
   }
 
   return (
     <div className="min-h-screen bg-[#f7f8fa] overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <RegisterSuccessToast />
+      <AccountDeletedModal forceVisible={isDeleted} />
 
       {/* ─── NAV ─── */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm">

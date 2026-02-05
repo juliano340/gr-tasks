@@ -4,6 +4,7 @@ import { auth } from "@/auth"
 import { redirect } from "next/navigation"
 import { AuthError } from "next-auth"
 import LoginErrorBanner from "@/components/login-error-banner"
+import RegisterSuccessToast from "@/components/register-success-toast"
 
 export default async function LoginPage({
   searchParams,
@@ -20,6 +21,7 @@ export default async function LoginPage({
 
   return (
     <div className="min-h-screen bg-[#f7f8fa] flex flex-col" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <RegisterSuccessToast />
       
       {/* ─── NAV ─── */}
       <nav className="bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm sticky top-0 z-50">

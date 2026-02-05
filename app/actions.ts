@@ -62,7 +62,20 @@ export async function registerUser(formData: FormData) {
     },
   })
 
-  redirect("/?registered=true")
+  redirect("/login?registered=true")
+}
+
+export async function checkUserEmail(email: string) {
+  if (!email || !email.includes("@")) {
+    return { exists: false }
+  }
+
+  const existingUser = await prisma.user.findUnique({
+    where: { email },
+    select: { id: true }
+  })
+
+  return { exists: !!existingUser }
 }
 
 // Forgot Password Action
