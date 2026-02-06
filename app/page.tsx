@@ -7,12 +7,34 @@ import AdBanner from "@/components/ad-banner"
 import RegisterSuccessToast from "@/components/register-success-toast"
 import AccountDeletedModal from "@/components/account-deleted-modal"
 import { cookies } from "next/headers"
+import { prisma } from "@/lib/prisma"
+import PremiumAvatars from "@/components/premium-avatars"
 
 export default async function Home(props: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   const searchParams = await props.searchParams
   const cookieStore = await cookies()
   const isDeleted = searchParams["account-deleted"] === "true" || cookieStore.get("account-deleted")?.value === "true"
   const session = await auth()
+
+  // Buscar os top 4 apoiadores (premium) com foto
+  const premiumUsers = await prisma.user.findMany({
+    where: {
+      subscription: {
+        plan: "premium"
+      },
+      image: {
+        not: null
+      }
+    },
+    take: 4,
+    select: {
+      image: true,
+      name: true
+    },
+    orderBy: {
+      createdAt: 'desc'
+    }
+  })
 
   if (session && !isDeleted) {
     redirect("/dashboard/tasks")
@@ -110,12 +132,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
 
             {/* Social proof */}
             <div className="flex items-center gap-3 mt-8 justify-center lg:justify-start">
-              <div className="flex -space-x-2.5">
-                <div className="w-9 h-9 rounded-full border-2 border-[#f7f8fa] bg-gradient-to-br from-indigo-400 to-indigo-600 shadow-sm" />
-                <div className="w-9 h-9 rounded-full border-2 border-[#f7f8fa] bg-gradient-to-br from-amber-400 to-orange-500 shadow-sm" />
-                <div className="w-9 h-9 rounded-full border-2 border-[#f7f8fa] bg-gradient-to-br from-emerald-400 to-teal-500 shadow-sm" />
-                <div className="w-9 h-9 rounded-full border-2 border-[#f7f8fa] bg-gradient-to-br from-pink-400 to-rose-500 shadow-sm" />
-              </div>
+              <PremiumAvatars users={premiumUsers} />
               <p className="text-sm text-gray-500">
                 <span className="font-bold text-gray-800">+1.200</span> usuários produtivos
               </p>
