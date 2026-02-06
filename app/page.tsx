@@ -244,8 +244,8 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
         <div className="max-w-6xl mx-auto px-6">
           <AdBanner dataAdSlot="YYYYYYYYYY" />
           <div className="text-center mt-8">
-            <p className="text-sm text-gray-400">
-              © 2026 Taskmaster App. Desenvolvido para máxima performance.
+            <p className="text-sm font-bold text-gray-400">
+              © 2026 TaskMaster App. <Link href="/termos" className="hover:text-indigo-600 transition-colors">Termos de Uso</Link>
             </p>
           </div>
         </div>

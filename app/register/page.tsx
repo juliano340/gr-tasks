@@ -90,8 +90,7 @@ export default async function RegisterPage() {
               <div className="mt-8 pt-6 border-t border-gray-100 text-center">
                 <p className="text-[11px] text-gray-400 font-medium leading-relaxed">
                   Ao continuar, você concorda com nossos <br />
-                  <a href="#" className="text-indigo-600 font-bold hover:underline">Termos de Serviço</a> e 
-                  <a href="#" className="text-indigo-600 font-bold hover:underline ml-1">Política de Privacidade</a>.
+                  <Link href="/termos" className="text-indigo-600 font-bold hover:underline">Termos de Serviço</Link>.
                 </p>
               </div>
             </div>
@@ -103,9 +102,12 @@ export default async function RegisterPage() {
       {/* ─── FOOTER (Igual à Home) ─── */}
       <footer className="py-8 bg-white/50 border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-xs text-gray-400 font-medium">
-            © 2026 TaskMaster App. Desenvolvido para máxima performance.
+          <p className="text-xs text-gray-400 font-medium mb-1">
+            © 2026 TaskMaster App.
           </p>
+          <Link href="/termos" className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors">
+            Termos de Uso
+          </Link>
         </div>
       </footer>
     </div>

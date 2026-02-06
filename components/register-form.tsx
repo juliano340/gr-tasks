@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState, useCallback } from "react"
+import { useEffect, useMemo, useState, useCallback, useRef } from "react"
 import Link from "next/link"
 import { checkUserEmail } from "@/app/actions"
 
@@ -25,6 +25,10 @@ const STEPS = [
     title: "Confirme a senha",
     subtitle: "Repita para evitar erros.",
   },
+  {
+    title: "Termos de Uso",
+    subtitle: "Quase pronto! Leia e aceite os termos.",
+  },
 ]
 
 export default function RegisterForm({ action }: RegisterFormProps) {
@@ -37,15 +41,37 @@ export default function RegisterForm({ action }: RegisterFormProps) {
   const [email, setEmail] = useState("")
   const [emailExists, setEmailExists] = useState(false)
   const [isCheckingEmail, setIsCheckingEmail] = useState(false)
+  const [acceptedTerms, setAcceptedTerms] = useState(false)
+  const [showValidationBadges, setShowValidationBadges] = useState(false)
+  const [nameTouched, setNameTouched] = useState(false)
+  const [emailTouched, setEmailTouched] = useState(false)
+  const [emailValidationReady, setEmailValidationReady] = useState(false)
+  const nameInputRef = useRef<HTMLInputElement | null>(null)
+  const emailInputRef = useRef<HTMLInputElement | null>(null)
+  const passwordInputRef = useRef<HTMLInputElement | null>(null)
+  const confirmPasswordInputRef = useRef<HTMLInputElement | null>(null)
+  const termsCheckboxRef = useRef<HTMLInputElement | null>(null)
+
+  const isEmailValid = useMemo(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }, [email])
+
+  const passwordRequirements = useMemo(() => ({
+    length: password.length >= 6,
+    hasLetter: /[a-zA-Z]/.test(password),
+    hasNumber: /[0-9]/.test(password)
+  }), [password])
 
   const stepChecks = useMemo(
     () => [
       name.trim().length >= 2,
-      email.includes("@") && !emailExists && !isCheckingEmail,
-      password.length >= 6,
-      confirmPassword.length >= 6 && password === confirmPassword,
+      isEmailValid && !emailExists && !isCheckingEmail,
+      passwordRequirements.length && passwordRequirements.hasLetter && passwordRequirements.hasNumber,
+      password === confirmPassword && confirmPassword.length >= 6,
+      acceptedTerms,
     ],
-    [name, email, emailExists, isCheckingEmail, password, confirmPassword]
+    [name, isEmailValid, emailExists, isCheckingEmail, passwordRequirements, password, confirmPassword, acceptedTerms]
   )
 
   const totalSteps = STEPS.length
@@ -72,10 +98,33 @@ export default function RegisterForm({ action }: RegisterFormProps) {
   }, [step, totalSteps])
 
   useEffect(() => {
+    if (step === 0) {
+      nameInputRef.current?.focus()
+      return
+    }
+    if (step === 1) {
+      emailInputRef.current?.focus()
+      return
+    }
+    if (step === 2) {
+      passwordInputRef.current?.focus()
+      return
+    }
+    if (step === 3) {
+      confirmPasswordInputRef.current?.focus()
+      return
+    }
+    if (step === 4) {
+      termsCheckboxRef.current?.focus()
+    }
+  }, [step])
+
+  useEffect(() => {
     const checkEmail = async () => {
       if (!email || !email.includes("@")) {
         setEmailExists(false)
         setIsCheckingEmail(false)
+        setEmailValidationReady(true)
         return
       }
 
@@ -87,15 +136,18 @@ export default function RegisterForm({ action }: RegisterFormProps) {
         console.error("Error checking email:", err)
       } finally {
         setIsCheckingEmail(false)
+        setEmailValidationReady(true)
       }
     }
 
+    setEmailValidationReady(false)
     const handle = setTimeout(checkEmail, 800)
     return () => clearTimeout(handle)
   }, [email])
 
   const handleNext = useCallback(() => {
     if (!canContinue) {
+      setShowValidationBadges(true)
       if (step === totalSteps - 1 && password !== confirmPassword) {
         setShowMismatch(true)
       }
@@ -111,8 +163,47 @@ export default function RegisterForm({ action }: RegisterFormProps) {
   }, [])
 
   const activeStep = STEPS[step] ?? STEPS[0]
-  const progress = Math.round(((step + 1) / totalSteps) * 100)
+
+  const validationBadges = useMemo(() => {
+    const badges: { step: number; label: string }[] = []
+
+    if (nameTouched && name.trim().length === 0) {
+      badges.push({ step: 0, label: "Nome obrigatorio" })
+    }
+
+    if (emailValidationReady) {
+      if (emailTouched && email.trim().length === 0) {
+        badges.push({ step: 1, label: "Email obrigatorio" })
+      } else if (email.length > 0 && !isEmailValid) {
+        badges.push({ step: 1, label: "Email invalido" })
+      } else if (email.length > 0 && emailExists) {
+        badges.push({ step: 1, label: "Email em uso" })
+      } else if (email.length > 0 && isCheckingEmail) {
+        badges.push({ step: 1, label: "Verificando email" })
+      }
+    }
+
+    if (password.length > 0 && (!passwordRequirements.length || !passwordRequirements.hasLetter || !passwordRequirements.hasNumber)) {
+      badges.push({ step: 2, label: "Senha nao atende requisitos" })
+    }
+
+    if (step === 3 && confirmPassword.length > 0 && showMismatch) {
+      badges.push({ step: 3, label: "Senhas diferentes" })
+    }
+
+    return badges
+  }, [name, email, emailExists, isCheckingEmail, password, confirmPassword, passwordRequirements, nameTouched, emailTouched, emailValidationReady, isEmailValid, showMismatch, step])
   const showGenericError = error && error !== "Email already in use"
+  const shouldShowValidationBadges = showValidationBadges || (step < 3 && !canContinue) || (step === 3 && showMismatch && confirmPassword.length > 0)
+  const visibleValidationBadges = useMemo(() => {
+    if (step === 2) {
+      return validationBadges.filter((badge) => badge.step === 1)
+    }
+    if (step === 0) {
+      return validationBadges.filter((badge) => badge.step === 0)
+    }
+    return validationBadges.filter((badge) => badge.step === step || badge.step === step - 1)
+  }, [step, validationBadges])
 
   return (
     <form
@@ -125,6 +216,7 @@ export default function RegisterForm({ action }: RegisterFormProps) {
           if (result.error === "Email already in use") {
             setStep(1)
             setEmailExists(true)
+            setShowValidationBadges(true)
           }
         }
       }}
@@ -137,6 +229,7 @@ export default function RegisterForm({ action }: RegisterFormProps) {
 
         if (!canSubmit) {
           event.preventDefault()
+          setShowValidationBadges(true)
           if (password !== confirmPassword) {
             setShowMismatch(true)
           }
@@ -158,16 +251,44 @@ export default function RegisterForm({ action }: RegisterFormProps) {
           </div>
         </div>
 
-        <div className="h-2 w-full rounded-full bg-gray-100 overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-indigo-600 to-violet-500 transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
+        {/* Barra de progresso segmentada */}
+        <div className="flex gap-2 h-1.5 w-full">
+          {STEPS.map((_, index) => (
+            <div
+              key={index}
+              className={`h-full flex-1 rounded-full transition-all duration-500 ${
+                index <= step
+                  ? "bg-gradient-to-r from-indigo-600 to-violet-500 shadow-[0_0_10px_rgba(79,70,229,0.2)]"
+                  : "bg-gray-100 dark:bg-gray-100"
+              }`}
+            />
+          ))}
         </div>
 
         {showGenericError && (
           <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
             {error}
+          </div>
+        )}
+
+        {shouldShowValidationBadges && visibleValidationBadges.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {visibleValidationBadges.map((badge, index) => (
+              <button
+                key={`${badge.step}-${badge.label}-${index}`}
+                type="button"
+                onClick={() => {
+                  setStep(badge.step)
+                }}
+                className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-amber-800 hover:bg-amber-100 cursor-pointer"
+                aria-label={`Ir para ${badge.label}`}
+              >
+                <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-amber-200 text-[10px] font-black text-amber-900 animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.55)] transition-transform scale-105">
+                  !
+                </span>
+                Erro: {badge.label}
+              </button>
+            ))}
           </div>
         )}
 
@@ -178,12 +299,16 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               id="name"
               name="name"
               type="text"
+              ref={nameInputRef}
               autoComplete="name"
               required
               value={name}
               onChange={(e) => {
                 setName(e.target.value)
                 setError(null)
+                if (!nameTouched) {
+                  setNameTouched(true)
+                }
               }}
               className={`w-full px-4 py-3 rounded-xl border bg-transparent text-black dark:text-black placeholder:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none ${
                 name.trim().length > 0 && name.trim().length < 2 ? "border-red-400" : "border-gray-300 dark:border-gray-700"
@@ -201,12 +326,27 @@ export default function RegisterForm({ action }: RegisterFormProps) {
                 id="email-address"
                 name="email"
                 type="email"
+                ref={emailInputRef}
                 autoComplete="email"
                 required
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value)
                   setError(null)
+                  if (!emailTouched) {
+                    setEmailTouched(true)
+                  }
+                  setEmailValidationReady(false)
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Tab" && isCheckingEmail) {
+                    e.preventDefault()
+                  }
+                }}
+                onBlur={() => {
+                  if (isCheckingEmail) {
+                    emailInputRef.current?.focus()
+                  }
                 }}
                 className={`w-full px-4 py-3 rounded-xl border bg-transparent text-black dark:text-black placeholder:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none ${
                   emailExists ? "border-red-400" : "border-gray-300 dark:border-gray-700"
@@ -219,20 +359,8 @@ export default function RegisterForm({ action }: RegisterFormProps) {
                 </div>
               )}
             </div>
-            {email.length > 0 && !email.includes("@") && (
-              <p className="text-xs font-semibold text-red-600">
-                Informe um email valido.
-              </p>
-            )}
-            {emailExists && (
-              <p className="text-sm text-red-600 font-semibold">
-                Este e-mail ja esta em uso.
-              </p>
-            )}
             {error === "Email already in use" && !emailExists && (
-              <p className="text-sm text-red-600 font-semibold">
-                Este e-mail ja esta em uso.
-              </p>
+              <p className="sr-only">Email em uso.</p>
             )}
           </div>
 
@@ -242,6 +370,7 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               id="password"
               name="password"
               type="password"
+              ref={passwordInputRef}
               autoComplete="new-password"
               required
               value={password}
@@ -250,11 +379,27 @@ export default function RegisterForm({ action }: RegisterFormProps) {
                 setError(null)
               }}
               className={`w-full px-4 py-3 rounded-xl border bg-transparent text-black dark:text-black placeholder:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none ${
-                password.length > 0 && password.length < 6 ? "border-red-400" : "border-gray-300 dark:border-gray-700"
+                password.length > 0 && (!passwordRequirements.length || !passwordRequirements.hasLetter || !passwordRequirements.hasNumber) ? "border-red-400" : "border-gray-300 dark:border-gray-700"
               }`}
-              placeholder="Minimo de 6 caracteres"
+              placeholder="Minimo de 6 caracteres (letras e numeros)"
             />
-            <p className="text-xs text-gray-500">Use pelo menos 6 caracteres.</p>
+            <div className="space-y-1.5 pt-1">
+              <p className="text-xs font-bold text-gray-700 uppercase tracking-wider">Requisitos da senha:</p>
+              <div className="grid grid-cols-2 gap-2">
+                <div className={`flex items-center gap-1.5 text-xs font-medium transition-colors ${passwordRequirements.length ? "text-green-600" : "text-gray-400"}`}>
+                  <div className={`h-1.5 w-1.5 rounded-full ${passwordRequirements.length ? "bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]" : "bg-gray-300"}`} />
+                  Pelo menos 6 caracteres
+                </div>
+                <div className={`flex items-center gap-1.5 text-xs font-medium transition-colors ${passwordRequirements.hasLetter ? "text-green-600" : "text-gray-400"}`}>
+                  <div className={`h-1.5 w-1.5 rounded-full ${passwordRequirements.hasLetter ? "bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]" : "bg-gray-300"}`} />
+                  Pelo menos uma letra
+                </div>
+                <div className={`flex items-center gap-1.5 text-xs font-medium transition-colors ${passwordRequirements.hasNumber ? "text-green-600" : "text-gray-400"}`}>
+                  <div className={`h-1.5 w-1.5 rounded-full ${passwordRequirements.hasNumber ? "bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]" : "bg-gray-300"}`} />
+                  Pelo menos um numero
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className={step === 3 ? "space-y-2 animate-in fade-in slide-in-from-bottom-2 duration-200" : "hidden"} aria-hidden={step !== 3}>
@@ -263,6 +408,7 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               id="confirm-password"
               name="confirmPassword"
               type="password"
+              ref={confirmPasswordInputRef}
               autoComplete="new-password"
               required
               value={confirmPassword}
@@ -278,23 +424,40 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               aria-describedby={showMismatch ? "confirm-password-error" : undefined}
             />
             {showMismatch && (
-              <p id="confirm-password-error" className="text-sm text-red-600 font-semibold">
+              <p id="confirm-password-error" className="text-sm text-red-600 font-semibold animate-in fade-in duration-300">
                 As senhas precisam ser iguais.
               </p>
             )}
           </div>
+
+          <div className={step === 4 ? "space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-200" : "hidden"} aria-hidden={step !== 4}>
+            <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5 space-y-4">
+                <label className="flex items-start gap-4 cursor-pointer group">
+                  <div className="relative flex items-center mt-1">
+                    <input
+                        type="checkbox"
+                        ref={termsCheckboxRef}
+                        checked={acceptedTerms}
+                        onChange={(e) => setAcceptedTerms(e.target.checked)}
+                        className="peer h-6 w-6 cursor-pointer appearance-none rounded-lg border-2 border-indigo-200 transition-all checked:bg-indigo-600 checked:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    />
+                    <svg className="absolute w-4 h-4 text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700 font-semibold leading-relaxed group-hover:text-gray-900 transition-colors">
+                    Li e concordo com os <Link href="/termos" target="_blank" className="text-indigo-600 font-black hover:underline decoration-2">Termos de Uso</Link> e estou ciente do caráter experimental do sistema.
+                  </span>
+                </label>
+            </div>
+            
+            <p className="text-xs text-center text-gray-500 font-medium px-4">
+              Ao clicar em "Criar Minha Conta", você confirma que leu e aceita nossos termos.
+            </p>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          {step > 0 && (
-            <button
-              type="button"
-              onClick={handleBack}
-              className="flex-1 py-3.5 px-4 rounded-xl font-bold border border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-300 transition-all"
-            >
-              Voltar
-            </button>
-          )}
+        <div className="flex flex-row-reverse items-center gap-3">
           <button
             type={step === totalSteps - 1 ? "submit" : "button"}
             onClick={step === totalSteps - 1 ? undefined : handleNext}
@@ -311,6 +474,16 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               ? (isCheckingEmail ? "Verificando..." : "Criar Minha Conta")
               : (step === 1 && isCheckingEmail ? "Verificando..." : "Continuar")}
           </button>
+          
+          {step > 0 && (
+            <button
+              type="button"
+              onClick={handleBack}
+              className="flex-1 py-3.5 px-4 rounded-xl font-bold border border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-300 transition-all"
+            >
+              Voltar
+            </button>
+          )}
         </div>
       </div>
       

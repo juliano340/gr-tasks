@@ -21,6 +21,9 @@ export function SignIn() {
         </svg>
         Entrar com Google
       </button>
+      <p className="mt-3 text-[10px] text-center text-gray-400 font-medium">
+        Ao entrar, você concorda com nossos <a href="/termos" className="text-indigo-600 hover:underline">Termos de Uso</a>.
+      </p>
     </form>
   )
 }

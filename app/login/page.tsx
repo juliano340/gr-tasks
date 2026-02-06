@@ -133,8 +133,13 @@ export default async function LoginPage({
       </main>
 
       <footer className="py-8 bg-white/50 border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 text-center text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em]">
-          Ambiente Criptografado e Seguro
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-2">
+            Ambiente Criptografado e Seguro
+          </p>
+          <Link href="/termos" className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors">
+            Termos de Uso
+          </Link>
         </div>
       </footer>
     </div>
