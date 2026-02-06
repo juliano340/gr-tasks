@@ -6,6 +6,8 @@ import { AuthError } from "next-auth"
 import LoginErrorBanner from "@/components/login-error-banner"
 import RegisterSuccessToast from "@/components/register-success-toast"
 import { SignIn } from "@/components/auth-components"
+import LoginForm from "@/components/login-form"
+import { authenticate } from "@/app/actions"
 
 export default async function LoginPage({
   searchParams,
@@ -72,49 +74,7 @@ export default async function LoginPage({
                 </div>
               </div>
 
-              <form
-                action={async (formData) => {
-                  "use server"
-                  try {
-                    await signIn("credentials", formData)
-                  } catch (error) {
-                    if (error instanceof AuthError) {
-                      redirect(`/login?error=${error.type}`)
-                    }
-                    throw error
-                  }
-                }}
-                className="space-y-4"
-              >
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-gray-700 uppercase tracking-wide ml-1">E-mail</label>
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="seu@email.com"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 text-gray-900 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all outline-none font-medium"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-gray-700 uppercase tracking-wide ml-1">Senha</label>
-                  <input
-                    name="password"
-                    type="password"
-                    required
-                    placeholder="********"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 text-gray-900 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all outline-none font-medium"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-4 px-4 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-bold shadow-lg transition-all hover:-translate-y-0.5 active:scale-[0.98] mt-2"
-                >
-                  Entrar no TaskMaster
-                </button>
-              </form>
+              <LoginForm action={authenticate} />
 
               <div className="pt-6 border-t border-gray-50 space-y-3 text-center">
                 <p className="text-sm text-gray-500 font-medium">

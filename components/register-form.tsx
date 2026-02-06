@@ -65,17 +65,17 @@ export default function RegisterForm({ action }: RegisterFormProps) {
 
   const stepChecks = useMemo(
     () => [
-      name.trim().length >= 2,
-      isEmailValid && !emailExists && !isCheckingEmail,
-      passwordRequirements.length && passwordRequirements.hasLetter && passwordRequirements.hasNumber,
-      password === confirmPassword && confirmPassword.length >= 6,
+      name.trim().length >= 2 && name.length <= 100,
+      isEmailValid && !emailExists && !isCheckingEmail && email.length <= 255,
+      passwordRequirements.length && passwordRequirements.hasLetter && passwordRequirements.hasNumber && password.length <= 100,
+      password === confirmPassword && confirmPassword.length >= 6 && confirmPassword.length <= 100,
       acceptedTerms,
     ],
-    [name, isEmailValid, emailExists, isCheckingEmail, passwordRequirements, password, confirmPassword, acceptedTerms]
+    [name, isEmailValid, emailExists, isCheckingEmail, passwordRequirements, password, confirmPassword, acceptedTerms, email.length]
   )
 
   const totalSteps = STEPS.length
-  const canContinue = stepChecks[step]
+  const canContinue = stepChecks.slice(0, step + 1).every(Boolean)
   const canSubmit = stepChecks.every(Boolean) && !isCheckingEmail
 
   useEffect(() => {
@@ -159,8 +159,12 @@ export default function RegisterForm({ action }: RegisterFormProps) {
 
   const handleBack = useCallback(() => {
     setError(null)
+    if (step === 1 && (!email || email.trim().length === 0)) {
+      setEmailTouched(false)
+      setShowValidationBadges(false)
+    }
     setStep((current) => Math.max(current - 1, 0))
-  }, [])
+  }, [step, email])
 
   const activeStep = STEPS[step] ?? STEPS[0]
 
@@ -169,6 +173,8 @@ export default function RegisterForm({ action }: RegisterFormProps) {
 
     if (nameTouched && name.trim().length === 0) {
       badges.push({ step: 0, label: "Nome obrigatorio" })
+    } else if (name.length > 100) {
+      badges.push({ step: 0, label: "Nome muito longo" })
     }
 
     if (emailValidationReady) {
@@ -176,6 +182,8 @@ export default function RegisterForm({ action }: RegisterFormProps) {
         badges.push({ step: 1, label: "Email obrigatorio" })
       } else if (email.length > 0 && !isEmailValid) {
         badges.push({ step: 1, label: "Email invalido" })
+      } else if (email.length > 255) {
+        badges.push({ step: 1, label: "Email muito longo" })
       } else if (email.length > 0 && emailExists) {
         badges.push({ step: 1, label: "Email em uso" })
       } else if (email.length > 0 && isCheckingEmail) {
@@ -185,10 +193,16 @@ export default function RegisterForm({ action }: RegisterFormProps) {
 
     if (password.length > 0 && (!passwordRequirements.length || !passwordRequirements.hasLetter || !passwordRequirements.hasNumber)) {
       badges.push({ step: 2, label: "Senha nao atende requisitos" })
+    } else if (password.length > 100) {
+      badges.push({ step: 2, label: "Senha muito longa" })
     }
 
-    if (step === 3 && confirmPassword.length > 0 && showMismatch) {
-      badges.push({ step: 3, label: "Senhas diferentes" })
+    if (step === 3 && confirmPassword.length > 0) {
+      if (showMismatch) {
+        badges.push({ step: 3, label: "Senhas diferentes" })
+      } else if (confirmPassword.length > 100) {
+        badges.push({ step: 3, label: "Confirmacao muito longa" })
+      }
     }
 
     return badges
@@ -196,14 +210,10 @@ export default function RegisterForm({ action }: RegisterFormProps) {
   const showGenericError = error && error !== "Email already in use"
   const shouldShowValidationBadges = showValidationBadges || (step < 3 && !canContinue) || (step === 3 && showMismatch && confirmPassword.length > 0)
   const visibleValidationBadges = useMemo(() => {
-    if (step === 2) {
-      return validationBadges.filter((badge) => badge.step === 1)
-    }
-    if (step === 0) {
-      return validationBadges.filter((badge) => badge.step === 0)
-    }
-    return validationBadges.filter((badge) => badge.step === step || badge.step === step - 1)
-  }, [step, validationBadges])
+    return validationBadges.filter((badge) => 
+      badge.step < step || (badge.step === step && shouldShowValidationBadges)
+    )
+  }, [step, validationBadges, shouldShowValidationBadges])
 
   return (
     <form
@@ -253,16 +263,23 @@ export default function RegisterForm({ action }: RegisterFormProps) {
 
         {/* Barra de progresso segmentada */}
         <div className="flex gap-2 h-1.5 w-full">
-          {STEPS.map((_, index) => (
-            <div
-              key={index}
-              className={`h-full flex-1 rounded-full transition-all duration-500 ${
-                index <= step
-                  ? "bg-gradient-to-r from-indigo-600 to-violet-500 shadow-[0_0_10px_rgba(79,70,229,0.2)]"
-                  : "bg-gray-100 dark:bg-gray-100"
-              }`}
-            />
-          ))}
+          {STEPS.map((_, index) => {
+            const hasError = validationBadges.some((b) => b.step === index) && (index < step || (index === step && shouldShowValidationBadges))
+            
+            let segmentColor = "bg-gray-100 dark:bg-gray-100"
+            if (hasError) {
+              segmentColor = "bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.4)]"
+            } else if (index <= step) {
+              segmentColor = "bg-gradient-to-r from-indigo-600 to-violet-500 shadow-[0_0_10px_rgba(79,70,229,0.2)]"
+            }
+
+            return (
+              <div
+                key={index}
+                className={`h-full flex-1 rounded-full transition-all duration-500 ${segmentColor}`}
+              />
+            )
+          })}
         </div>
 
         {showGenericError && (
@@ -302,9 +319,11 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               ref={nameInputRef}
               autoComplete="name"
               required
+              maxLength={100}
               value={name}
               onChange={(e) => {
-                setName(e.target.value)
+                const newValue = e.target.value.slice(0, 100)
+                setName(newValue)
                 setError(null)
                 if (!nameTouched) {
                   setNameTouched(true)
@@ -329,9 +348,11 @@ export default function RegisterForm({ action }: RegisterFormProps) {
                 ref={emailInputRef}
                 autoComplete="email"
                 required
+                maxLength={255}
                 value={email}
                 onChange={(e) => {
-                  setEmail(e.target.value)
+                  const newValue = e.target.value.slice(0, 255)
+                  setEmail(newValue)
                   setError(null)
                   if (!emailTouched) {
                     setEmailTouched(true)
@@ -373,15 +394,18 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               ref={passwordInputRef}
               autoComplete="new-password"
               required
+              maxLength={100}
+              disabled={!stepChecks.slice(0, 2).every(Boolean)}
               value={password}
               onChange={(e) => {
-                setPassword(e.target.value)
+                const newValue = e.target.value.slice(0, 100)
+                setPassword(newValue)
                 setError(null)
               }}
               className={`w-full px-4 py-3 rounded-xl border bg-transparent text-black dark:text-black placeholder:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none ${
                 password.length > 0 && (!passwordRequirements.length || !passwordRequirements.hasLetter || !passwordRequirements.hasNumber) ? "border-red-400" : "border-gray-300 dark:border-gray-700"
-              }`}
-              placeholder="Minimo de 6 caracteres (letras e numeros)"
+              } ${!stepChecks.slice(0, 2).every(Boolean) ? "opacity-50 cursor-not-allowed bg-gray-50" : ""}`}
+              placeholder={!stepChecks.slice(0, 2).every(Boolean) ? "Corrija os erros anteriores primeiro" : "Minimo de 6 caracteres (letras e numeros)"}
             />
             <div className="space-y-1.5 pt-1">
               <p className="text-xs font-bold text-gray-700 uppercase tracking-wider">Requisitos da senha:</p>
@@ -411,15 +435,18 @@ export default function RegisterForm({ action }: RegisterFormProps) {
               ref={confirmPasswordInputRef}
               autoComplete="new-password"
               required
+              maxLength={100}
+              disabled={!stepChecks.slice(0, 3).every(Boolean)}
               value={confirmPassword}
               onChange={(e) => {
-                setConfirmPassword(e.target.value)
+                const newValue = e.target.value.slice(0, 100)
+                setConfirmPassword(newValue)
                 setError(null)
               }}
               className={`w-full px-4 py-3 rounded-xl border bg-transparent text-black dark:text-black placeholder:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none ${
                 showMismatch ? "border-red-400" : "border-gray-300 dark:border-gray-700"
-              }`}
-              placeholder="Repita a senha"
+              } ${!stepChecks.slice(0, 3).every(Boolean) ? "opacity-50 cursor-not-allowed bg-gray-50" : ""}`}
+              placeholder={!stepChecks.slice(0, 3).every(Boolean) ? "Corrija os erros anteriores primeiro" : "Repita sua senha"}
               aria-invalid={showMismatch ? "true" : "false"}
               aria-describedby={showMismatch ? "confirm-password-error" : undefined}
             />

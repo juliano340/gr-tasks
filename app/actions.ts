@@ -9,10 +9,10 @@ import { randomUUID } from "node:crypto"
 const prisma = new PrismaClient()
 
 const RegisterSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
-  confirmPassword: z.string().min(6, "Password must be at least 6 characters"),
+  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Nome muito longo"),
+  email: z.string().email("Invalid email address").max(255, "Email muito longo"),
+  password: z.string().min(6, "Password must be at least 6 characters").max(100, "Senha muito longa"),
+  confirmPassword: z.string().min(6, "Password must be at least 6 characters").max(100, "Senha muito longa"),
 }).refine(data => data.password === data.confirmPassword, {
   message: "Passwords do not match",
   path: ["confirmPassword"],
@@ -64,6 +64,18 @@ export async function registerUser(formData: FormData) {
   })
 
   redirect("/login?registered=true")
+}
+
+export async function authenticate(formData: FormData) {
+  try {
+    const { signIn } = await import("@/auth")
+    await signIn("credentials", formData)
+  } catch (error) {
+    if (error instanceof Error && error.message.includes("NEXT_REDIRECT")) {
+      throw error
+    }
+    return { error: "Credenciais invalidas" }
+  }
 }
 
 export async function checkUserEmail(email: string) {
