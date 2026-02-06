@@ -4,6 +4,7 @@ import { z } from "zod"
 import { PrismaClient } from "@prisma/client"
 import bcrypt from "bcryptjs"
 import { redirect } from "next/navigation"
+import { randomUUID } from "node:crypto"
 
 const prisma = new PrismaClient()
 
@@ -66,13 +67,14 @@ export async function registerUser(formData: FormData) {
 }
 
 export async function checkUserEmail(email: string) {
-  if (!email || !email.includes("@")) {
+  const normalizedEmail = email?.trim()
+  if (!normalizedEmail || !normalizedEmail.includes("@")) {
     return { exists: false }
   }
 
   const existingUser = await prisma.user.findUnique({
-    where: { email },
-    select: { id: true }
+    where: { email: normalizedEmail },
+    select: { id: true },
   })
 
   return { exists: !!existingUser }
@@ -80,31 +82,31 @@ export async function checkUserEmail(email: string) {
 
 // Forgot Password Action
 export async function forgotPassword(formData: FormData) {
-  const email = formData.get("email") as string
+  const rawEmail = formData.get("email")
+  const parsedEmail = z.string().trim().email().safeParse(rawEmail)
 
-  if (!email) {
-    return { error: "Email é obrigatório" }
+  if (!parsedEmail.success) {
+    return { error: "Informe um email valido" }
   }
+
+  const email = parsedEmail.data
 
   const user = await prisma.user.findUnique({
     where: { email },
   })
 
-  if (!user || !user.password) {
-    // Não revela se o email existe por segurança
-    return { success: "Se o email existir, você receberá um link de recuperação" }
+  if (!user) {
+    // Nao revela se o email existe por seguranca
+    return { success: "Se o email existir, voce recebera um link de recuperacao" }
   }
 
-  // Gera token único
-  const token = crypto.randomUUID()
+  const token = randomUUID()
   const expires = new Date(Date.now() + 3600000) // 1 hora
 
-  // Deleta tokens antigos deste email
   await prisma.passwordResetToken.deleteMany({
     where: { email },
   })
 
-  // Cria novo token
   await prisma.passwordResetToken.create({
     data: {
       email,
@@ -113,16 +115,15 @@ export async function forgotPassword(formData: FormData) {
     },
   })
 
-  // Envia email
-  const { sendPasswordResetEmail } = await import("@/lib/email")
   try {
+    const { sendPasswordResetEmail } = await import("@/lib/email")
     await sendPasswordResetEmail(email, token)
   } catch (error) {
-    console.error("Erro ao enviar email:", error)
-    return { error: "Erro ao enviar email. Verifique as configurações." }
+    console.error("Erro ao enviar email de recuperacao:", error)
+    return { error: "Erro ao enviar email. Verifique as configuracoes." }
   }
 
-  return { success: "Email de recuperação enviado!" }
+  return { success: "Email de recuperacao enviado!" }
 }
 
 // Reset Password Action
@@ -131,11 +132,11 @@ export async function resetPassword(formData: FormData) {
   const password = formData.get("password") as string
 
   if (!token || !password) {
-    return { error: "Token e senha são obrigatórios" }
+    return { error: "Token e senha sao obrigatorios" }
   }
 
   if (password.length < 6) {
-    return { error: "A senha deve ter no mínimo 6 caracteres" }
+    return { error: "A senha deve ter no minimo 6 caracteres" }
   }
 
   const resetToken = await prisma.passwordResetToken.findUnique({
@@ -143,7 +144,7 @@ export async function resetPassword(formData: FormData) {
   })
 
   if (!resetToken) {
-    return { error: "Token inválido ou expirado" }
+    return { error: "Token invalido ou expirado" }
   }
 
   if (resetToken.expires < new Date()) {
@@ -160,5 +161,6 @@ export async function resetPassword(formData: FormData) {
 
   await prisma.passwordResetToken.delete({ where: { token } })
 
-  redirect("/?password-reset=true")
+  redirect("/login?password-reset=true")
 }
+

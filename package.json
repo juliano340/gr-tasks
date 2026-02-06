@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:email": "node --env-file=.env scripts/test-email.js"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",

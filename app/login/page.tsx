@@ -10,21 +10,20 @@ import { SignIn } from "@/components/auth-components"
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string; callbackUrl?: string }>
+  searchParams: Promise<{ error?: string; callbackUrl?: string; "password-reset"?: string }>
 }) {
   const session = await auth()
-  
+
   if (session) {
     redirect("/dashboard/tasks")
   }
 
-  const { error } = await searchParams
+  const { error, ["password-reset"]: passwordReset } = await searchParams
 
   return (
     <div className="min-h-screen bg-[#f7f8fa] flex flex-col" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       <RegisterSuccessToast />
-      
-      {/* ─── NAV ─── */}
+
       <nav className="bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2.5 group">
@@ -42,12 +41,18 @@ export default async function LoginPage({
       </nav>
 
       <main className="flex-1 flex items-center justify-center p-6 relative overflow-hidden">
-        {/* Fundo Decorativo */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-100 rounded-full blur-[140px] opacity-50 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-100 rounded-full blur-[120px] opacity-40 pointer-events-none" />
 
         <div className="w-full max-w-md relative z-10 animate-in fade-in zoom-in-95 duration-500">
           <LoginErrorBanner error={error} />
+
+          {passwordReset === "true" && (
+            <div className="mb-4 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800 shadow-sm" role="status" aria-live="polite">
+              <p className="font-semibold">Senha redefinida com sucesso.</p>
+              <p className="text-emerald-700">Agora voce ja pode entrar com seu email e senha no TaskMaster.</p>
+            </div>
+          )}
 
           <div className="bg-white rounded-3xl shadow-xl shadow-indigo-200/50 border border-gray-100 p-8 md:p-10">
             <div className="text-center mb-8">
@@ -56,7 +61,6 @@ export default async function LoginPage({
             </div>
 
             <div className="space-y-6">
-              {/* Google Login */}
               <SignIn />
 
               <div className="relative">
@@ -68,7 +72,6 @@ export default async function LoginPage({
                 </div>
               </div>
 
-              {/* Form de Autenticação Puro */}
               <form
                 action={async (formData) => {
                   "use server"
@@ -100,7 +103,7 @@ export default async function LoginPage({
                     name="password"
                     type="password"
                     required
-                    placeholder="••••••••"
+                    placeholder="********"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 text-gray-900 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all outline-none font-medium"
                   />
                 </div>
@@ -113,12 +116,11 @@ export default async function LoginPage({
                 </button>
               </form>
 
-              {/* Links Auxiliares - Lá embaixo, bem discretos */}
               <div className="pt-6 border-t border-gray-50 space-y-3 text-center">
                 <p className="text-sm text-gray-500 font-medium">
-                  Não tem conta?{" "}
+                  Nao tem conta?{" "}
                   <Link href="/register" className="text-indigo-600 hover:text-indigo-700 font-extrabold transition-colors">
-                    Cadastre-se grátis
+                    Cadastre-se gratis
                   </Link>
                 </p>
                 <Link href="/forgot-password" className="inline-block text-[11px] font-bold text-gray-400 hover:text-indigo-600 transition-colors uppercase tracking-wider underline decoration-1 underline-offset-4">
